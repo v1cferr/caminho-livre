@@ -1,71 +1,74 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBg} 
-          alt="" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
-      </div>
-
-      {/* Content */}
-      <div className="container relative z-10 py-20 md:py-32">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="animate-fade-up inline-flex items-center gap-2 bg-accent-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Heart className="w-4 h-4 text-accent" fill="currentColor" />
-            <span className="text-accent-foreground text-sm font-medium">
-              Você não está sozinho nessa jornada
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6">
-            Dívidas não definem{" "}
-            <span className="relative">
-              quem você é
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                <path d="M2 10C50 4 150 2 298 8" stroke="hsl(28 90% 55%)" strokeWidth="4" strokeLinecap="round"/>
-              </svg>
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="animate-fade-up-delay-2 text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl">
-            Milhões de brasileiros enfrentam dificuldades financeiras todos os dias. 
-            Estamos aqui para ajudar você a <strong>retomar o controle</strong>, sem julgamentos, 
-            com passos simples e acolhimento.
-          </p>
-
-          {/* CTAs */}
-          <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4">
-            <Button variant="cta" size="lg" className="group">
-              Organizar minhas finanças
-              <ArrowRight className="transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="cta-outline" size="lg">
-              Entender minha situação
-            </Button>
-          </div>
-
-          {/* Trust indicator */}
-          <p className="animate-fade-up-delay-3 mt-8 text-primary-foreground/70 text-sm">
-            ✓ Orientação gratuita &nbsp;&nbsp; ✓ Sem burocracia &nbsp;&nbsp; ✓ 100% confidencial
-          </p>
+    <section className="min-h-screen relative bg-primary text-primary-foreground overflow-hidden">
+      {/* Top Bar */}
+      <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-6 md:p-10">
+        <div className="text-sm font-medium tracking-widest uppercase">
+          Vida Financeira
+        </div>
+        <div className="hidden md:flex items-center gap-8 text-sm">
+          <a href="#problema" className="hover:text-accent transition-colors">O Problema</a>
+          <a href="#solucoes" className="hover:text-accent transition-colors">Soluções</a>
+          <a href="#beneficios" className="hover:text-accent transition-colors">Benefícios</a>
         </div>
       </div>
 
-      {/* Decorative floating shapes */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-full pointer-events-none opacity-20">
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-accent/30 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-40 right-40 w-48 h-48 bg-primary-foreground/20 rounded-full blur-2xl animate-float" style={{ animationDelay: "-2s" }} />
+      {/* Main Content */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-20 pt-24">
+        <div className="max-w-7xl mx-auto w-full">
+          {/* Eyebrow */}
+          <div className="animate-fade-up mb-6">
+            <span className="inline-block px-4 py-2 bg-accent text-accent-foreground text-sm font-semibold tracking-wide">
+              VOCÊ NÃO ESTÁ SOZINHO
+            </span>
+          </div>
+
+          {/* Giant Headline */}
+          <h1 className="animate-fade-up-delay-1 display-xl text-primary-foreground mb-8">
+            DÍVIDAS
+            <br />
+            <span className="text-accent">NÃO TE</span>
+            <br />
+            DEFINEM
+          </h1>
+
+          {/* Subtitle positioned asymmetrically */}
+          <div className="animate-fade-up-delay-2 md:ml-auto md:max-w-md lg:max-w-lg md:-mt-32 lg:-mt-48 relative z-10">
+            <p className="text-lg md:text-xl font-light leading-relaxed text-primary-foreground/80 mb-8">
+              Milhões de brasileiros enfrentam dificuldades financeiras. 
+              Estamos aqui para ajudar você a <strong className="text-accent font-medium">retomar o controle</strong>, 
+              sem julgamentos.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="cta" size="xl" className="group">
+                Começar agora
+                <ArrowRight className="transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-primary-foreground/60">
+        <span className="text-xs tracking-widest uppercase">Role para descobrir</span>
+        <ArrowDown className="w-5 h-5 animate-bounce" />
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 right-10 hidden lg:block">
+        <div className="vertical-text text-primary-foreground/10 text-xl tracking-[0.5em] font-light">
+          LIBERDADE FINANCEIRA
+        </div>
+      </div>
+
+      {/* Large decorative number */}
+      <div className="absolute bottom-0 right-0 text-primary-foreground/5 font-['Bebas_Neue'] text-[40vw] leading-none pointer-events-none">
+        01
       </div>
     </section>
   );

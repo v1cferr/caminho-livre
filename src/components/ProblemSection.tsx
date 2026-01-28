@@ -1,112 +1,127 @@
-import { CreditCard, ShoppingBag, Brain, Megaphone, Dice1, Users, AlertTriangle } from "lucide-react";
+import { 
+  CreditCard, 
+  ShoppingBag, 
+  Brain, 
+  Megaphone, 
+  BookX,
+  Dices,
+  Users
+} from "lucide-react";
 
 const problems = [
   {
     icon: CreditCard,
     title: "Crédito Fácil Demais",
-    description: "Cartões de crédito, empréstimos instantâneos e parcelamentos sem fim. A facilidade de acesso ao crédito nos faz perder a noção do quanto realmente devemos.",
-    example: "\"Achei que conseguia pagar, eram só 12 parcelas...\"",
+    description: "Cartões, empréstimos, parcelamentos infinitos. O acesso fácil ao crédito cria a ilusão de poder de compra.",
+    number: "01",
   },
   {
     icon: ShoppingBag,
-    title: "Consumo Excessivo",
-    description: "Promoções relâmpago, influenciadores vendendo estilo de vida, e a sensação de que precisamos ter mais para sermos felizes ou aceitos.",
-    example: "\"Todo mundo tem, eu também mereço ter.\"",
+    title: "Consumo Impulsivo",
+    description: "Promoções irresistíveis, status social, a pressão de ter. Consumimos mais do que precisamos.",
+    number: "02",
+  },
+  {
+    icon: BookX,
+    title: "Falta de Educação Financeira",
+    description: "Ninguém nos ensinou a lidar com dinheiro. A escola não prepara, a família muitas vezes também não.",
+    number: "03",
   },
   {
     icon: Brain,
-    title: "Saúde Mental Fragilizada",
-    description: "Ansiedade, depressão, noites sem dormir. O estresse financeiro afeta a mente, e a mente fragilizada toma decisões impulsivas. É um ciclo difícil de quebrar.",
-    example: "\"Comprava para aliviar a tristeza, mas piorava tudo.\"",
+    title: "Impacto na Saúde Mental",
+    description: "Ansiedade, insônia, estresse constante. O peso das dívidas afeta corpo e mente.",
+    number: "04",
   },
   {
     icon: Megaphone,
     title: "Marketing Agressivo",
-    description: "Propagandas que prometem facilidade, bancos que oferecem crédito sem parar. Marketing bem feito, educação financeira quase nenhuma.",
-    example: "\"Parecia tão fácil, era só assinar.\"",
+    description: "Bombardeio de ofertas, gatilhos emocionais, urgência artificial. Somos alvos constantes.",
+    number: "05",
   },
   {
-    icon: Dice1,
+    icon: Dices,
     title: "Apostas e Vícios",
-    description: "A popularização das apostas online (bets) criou uma nova armadilha. O que começa como diversão pode virar um buraco sem fundo.",
-    example: "\"Ia ganhar de volta o que perdi, mas só afundei mais.\"",
-  },
-  {
-    icon: Users,
-    title: "Vulnerabilidade Social",
-    description: "Baixa renda, desemprego, falta de suporte familiar. Quem já está em situação difícil tem menos margem para erros financeiros.",
-    example: "\"Não tinha reserva, qualquer imprevisto quebrava tudo.\"",
+    description: "Jogos, bets, vícios financeiros. Promessas de ganho fácil que destroem patrimônios.",
+    number: "06",
   },
 ];
 
 const ProblemSection = () => {
   return (
-    <section id="problema" className="py-20 md:py-28 bg-background">
-      <div className="container">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            As Raízes do Problema
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Por que tantas pessoas estão endividadas?
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            O endividamento não é sinal de fraqueza ou irresponsabilidade. 
-            É o resultado de um sistema que facilita o crédito, mas dificulta a educação financeira.
-          </p>
+    <section id="problema" className="py-24 md:py-32 bg-background relative overflow-hidden">
+      {/* Section Header - Asymmetric */}
+      <div className="container mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 items-end">
+          <div>
+            <span className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4">
+              Entenda o cenário
+            </span>
+            <h2 className="display-lg text-foreground">
+              POR QUE
+              <br />
+              <span className="text-accent">ISSO</span>
+              <br />
+              ACONTECE?
+            </h2>
+          </div>
+          <div className="lg:pb-4">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
+              O endividamento não é fraqueza pessoal. É resultado de um sistema 
+              desenhado para nos fazer consumir além do que podemos.
+            </p>
+          </div>
         </div>
+      </div>
 
-        {/* Problem Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {/* Problems Grid - Magazine Style */}
+      <div className="container">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t-2 border-l-2 border-foreground/10">
           {problems.map((problem, index) => (
             <div 
               key={index}
-              className="group bg-card rounded-2xl p-8 card-elevated border border-border/50 hover:border-primary/30"
+              className="group relative p-8 md:p-10 border-b-2 border-r-2 border-foreground/10 hover:bg-accent/5 transition-colors"
             >
-              <div className="icon-container mb-6 group-hover:scale-110 transition-transform">
-                <problem.icon className="w-7 h-7" />
+              {/* Large Number */}
+              <span className="absolute top-4 right-4 font-['Bebas_Neue'] text-6xl text-foreground/5 group-hover:text-accent/20 transition-colors">
+                {problem.number}
+              </span>
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-none bg-foreground text-background flex items-center justify-center mb-6 group-hover:bg-accent transition-colors">
+                  <problem.icon className="w-6 h-6" />
+                </div>
+                
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {problem.title}
+                </h3>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  {problem.description}
+                </p>
               </div>
-              
-              <h3 className="text-xl font-bold text-card-foreground mb-3">
-                {problem.title}
-              </h3>
-              
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                {problem.description}
-              </p>
-              
-              <p className="empathy-quote text-sm">
-                {problem.example}
-              </p>
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Knowledge gap callout */}
-        <div className="mt-12 p-6 md:p-8 bg-secondary/50 rounded-2xl border border-border/50">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <AlertTriangle className="w-6 h-6 text-primary" />
-            </div>
-            <div>
-              <h4 className="font-bold text-foreground mb-1">A raiz de tudo: Falta de Conhecimento</h4>
-              <p className="text-muted-foreground">
-                Ninguém nos ensina a lidar com dinheiro na escola. Crescemos sem saber fazer orçamento, 
-                sem entender juros compostos, sem distinguir necessidade de desejo. 
-                <strong className="text-primary"> Mas nunca é tarde para aprender.</strong>
-              </p>
-            </div>
+      {/* Highlighted Callout */}
+      <div className="container mt-16">
+        <div className="bg-primary text-primary-foreground p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <Users className="w-12 h-12 flex-shrink-0 text-accent" />
+          <div>
+            <h4 className="text-xl font-semibold mb-2">Vulnerabilidade Social</h4>
+            <p className="text-primary-foreground/80 leading-relaxed">
+              Pessoas em situação de vulnerabilidade são ainda mais afetadas. 
+              Golpes, empréstimos abusivos e falta de rede de apoio agravam o problema.
+            </p>
           </div>
         </div>
+      </div>
 
-        {/* Empathy note */}
-        <div className="mt-8 text-center">
-          <p className="text-muted-foreground italic">
-            Se você se identificou com alguma dessas situações, saiba:{" "}
-            <strong className="text-primary">você não está sozinho.</strong>
-          </p>
-        </div>
+      {/* Large decorative number */}
+      <div className="absolute -bottom-20 -left-20 text-foreground/[0.02] font-['Bebas_Neue'] text-[50vw] leading-none pointer-events-none">
+        02
       </div>
     </section>
   );

@@ -5,8 +5,7 @@ import {
   MessageCircle, 
   Pyramid, 
   Calculator, 
-  ArrowRight, 
-  CheckCircle,
+  ArrowRight,
   Lightbulb,
   HeartHandshake
 } from "lucide-react";
@@ -15,114 +14,129 @@ const solutions = [
   {
     icon: FileCheck,
     title: "Serasa Limpa Nome",
-    description: "Programas de negociação oferecem descontos de até 90% para quitação de dívidas. É um alívio real e imediato.",
-    benefits: ["Descontos significativos", "Parcelamento acessível", "Saia do vermelho rápido"],
-    highlighted: true,
+    description: "Negocie suas dívidas com descontos de até 90%. Parcelamento acessível para sair do vermelho.",
+    highlight: true,
   },
   {
     icon: RefreshCw,
-    title: "Renegociação de Dívidas",
-    description: "Entre em contato direto com seus credores. Muitos preferem receber algo do que nada e estão abertos a negociar.",
-    benefits: ["Condições personalizadas", "Sem intermediários", "Flexibilidade de prazos"],
+    title: "Renegociação Direta",
+    description: "Entre em contato com seus credores. Muitos preferem receber algo a não receber nada.",
   },
   {
     icon: MessageCircle,
     title: "Assistente Virtual",
-    description: "Utilize chatbots e assistentes virtuais de bancos e instituições para tirar dúvidas e receber orientações 24h.",
-    benefits: ["Disponível 24 horas", "Sem filas ou espera", "Respostas imediatas"],
+    description: "Use chatbots de bancos e instituições para tirar dúvidas 24 horas por dia.",
   },
   {
     icon: Pyramid,
-    title: "Pirâmide de Maslow",
-    description: "Priorize suas necessidades: primeiro o essencial (moradia, alimentação, saúde), depois o restante. Ordem certa faz diferença.",
-    benefits: ["Clareza de prioridades", "Menos culpa", "Decisões conscientes"],
+    title: "Priorize o Essencial",
+    description: "Moradia, alimentação, saúde primeiro. O resto pode esperar.",
   },
   {
     icon: Calculator,
-    title: "Organização Financeira",
-    description: "Monte um orçamento simples, anote todos os gastos e defina metas realistas. Pequenos passos levam longe.",
-    benefits: ["Controle total", "Metas alcançáveis", "Independência"],
+    title: "Organize as Finanças",
+    description: "Anote todos os gastos. Defina metas realistas. Pequenos passos levam longe.",
   },
   {
     icon: Lightbulb,
-    title: "Ideias de Renda Extra",
-    description: "Explore habilidades que você já tem para gerar renda adicional. Vender bolos, fazer freelance, dar aulas — toda renda ajuda.",
-    benefits: ["Use seus talentos", "Flexibilidade de horário", "Acelere a quitação"],
+    title: "Gere Renda Extra",
+    description: "Seus talentos valem dinheiro. Freelance, vendas, serviços. Toda renda ajuda.",
   },
   {
     icon: HeartHandshake,
-    title: "Apoio Profissional",
-    description: "Busque ajuda de profissionais: CRAS, CAPS, assistência social. Saúde mental e suporte fazem parte da recuperação financeira.",
-    benefits: ["Suporte gratuito", "Orientação especializada", "Rede de apoio"],
+    title: "Busque Apoio",
+    description: "CRAS, CAPS, assistência social. Você não precisa fazer isso sozinho.",
   },
 ];
 
 const SolutionsSection = () => {
   return (
-    <section id="solucoes" className="py-20 md:py-28 bg-background">
+    <section id="solucoes" className="py-24 md:py-32 bg-background relative overflow-hidden">
+      {/* Marquee Banner */}
+      <div className="bg-accent py-4 mb-20 overflow-hidden">
+        <div className="marquee-container">
+          <div className="marquee-text">
+            <span className="inline-flex items-center gap-8 text-accent-foreground font-['Bebas_Neue'] text-2xl tracking-wider">
+              <span>★ A MUDANÇA É POSSÍVEL</span>
+              <span>★ EXISTE SAÍDA</span>
+              <span>★ VOCÊ CONSEGUE</span>
+              <span>★ UM PASSO DE CADA VEZ</span>
+              <span>★ A MUDANÇA É POSSÍVEL</span>
+              <span>★ EXISTE SAÍDA</span>
+              <span>★ VOCÊ CONSEGUE</span>
+              <span>★ UM PASSO DE CADA VEZ</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div className="container">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-            Caminhos para a Solução
+        <div className="text-center mb-20">
+          <span className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4">
+            Caminhos para a solução
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            A mudança está ao seu alcance
+          <h2 className="display-lg text-foreground">
+            <span className="text-accent">7 PASSOS</span>
+            <br />
+            PARA RECOMEÇAR
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Não existe fórmula mágica, mas existem passos práticos e acessíveis 
-            que qualquer pessoa pode dar. Veja como começar:
-          </p>
         </div>
 
-        {/* Solutions Grid */}
+        {/* Solutions - Staggered Layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className={`group relative bg-card rounded-2xl p-8 card-elevated border transition-all ${
-                solution.highlighted 
-                  ? "border-accent/50 ring-2 ring-accent/20" 
-                  : "border-border/50 hover:border-primary/30"
-              }`}
+              className={`editorial-card p-8 ${
+                solution.highlight 
+                  ? "md:col-span-2 lg:col-span-1 bg-accent text-accent-foreground border-accent" 
+                  : ""
+              } ${index === 0 ? "lg:row-span-2" : ""}`}
             >
-              {solution.highlighted && (
-                <div className="absolute -top-3 left-6 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  Mais Popular
-                </div>
+              {solution.highlight && (
+                <span className="inline-block text-xs font-bold tracking-widest uppercase mb-4 bg-accent-foreground/20 px-3 py-1">
+                  MAIS POPULAR
+                </span>
               )}
-
-              <div className={`mb-6 ${solution.highlighted ? "icon-container-accent" : "icon-container"}`}>
+              
+              <div className={`w-14 h-14 flex items-center justify-center mb-6 ${
+                solution.highlight 
+                  ? "bg-accent-foreground text-accent" 
+                  : "bg-foreground text-background"
+              }`}>
                 <solution.icon className="w-7 h-7" />
               </div>
               
-              <h3 className="text-xl font-bold text-card-foreground mb-3">
+              <h3 className={`text-2xl font-semibold mb-4 ${
+                solution.highlight ? "" : "text-foreground"
+              }`}>
                 {solution.title}
               </h3>
               
-              <p className="text-muted-foreground leading-relaxed mb-5">
+              <p className={`leading-relaxed ${
+                solution.highlight 
+                  ? "text-accent-foreground/90" 
+                  : "text-muted-foreground"
+              }`}>
                 {solution.description}
               </p>
-              
-              <ul className="space-y-2">
-                {solution.benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-12 text-center">
+        <div className="mt-16 text-center">
           <Button variant="default" size="lg" className="group">
-            Ver guia completo de organização
+            Ver guia completo
             <ArrowRight className="transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
+      </div>
+
+      {/* Large decorative number */}
+      <div className="absolute -bottom-20 -right-20 text-foreground/[0.02] font-['Bebas_Neue'] text-[50vw] leading-none pointer-events-none">
+        04
       </div>
     </section>
   );
