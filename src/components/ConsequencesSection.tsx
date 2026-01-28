@@ -1,84 +1,108 @@
-import { AlertCircle, Ban, TrendingDown, HeartCrack, Users, ShieldX } from "lucide-react";
+import { 
+  Ban, 
+  TrendingDown, 
+  HeartCrack, 
+  Frown,
+  Users,
+  ShieldOff
+} from "lucide-react";
 
 const consequences = [
   {
     icon: Ban,
     title: "Nome Negativado",
-    description: "CPF restrito impede novos financiamentos, cartões, alugar imóvel e até conseguir emprego.",
+    description: "Portas fechadas para crédito, financiamentos e até mesmo aluguel de imóveis.",
   },
   {
     icon: TrendingDown,
-    title: "Dificuldade de Planejar",
-    description: "Sem conseguir prever o futuro, fica impossível fazer planos como trocar de carro ou fazer uma viagem.",
+    title: "Sem Planejamento",
+    description: "Impossível pensar no futuro quando o presente é só apagar incêndios.",
   },
   {
     icon: HeartCrack,
-    title: "Impacto na Saúde Mental",
-    description: "Ansiedade, depressão, vergonha. O peso das dívidas afeta profundamente o bem-estar emocional.",
+    title: "Saúde Abalada",
+    description: "Estresse crônico, ansiedade, depressão. O corpo paga o preço das dívidas.",
   },
   {
     icon: Users,
     title: "Conflitos Familiares",
-    description: "Brigas sobre dinheiro, tensão constante em casa, relacionamentos desgastados pelo estresse.",
+    description: "Tensão em casa, brigas por dinheiro, relacionamentos desgastados.",
   },
   {
-    icon: ShieldX,
-    title: "Vulnerabilidade",
-    description: "Sem reserva, qualquer imprevisto vira crise. Doença, desemprego ou acidente podem devastar.",
+    icon: Frown,
+    title: "Perda de Controle",
+    description: "A sensação de que nada funciona, de que não há saída. Mas há.",
   },
   {
-    icon: AlertCircle,
-    title: "Sensação de Impotência",
-    description: "A bola de neve só cresce, os juros consomem tudo, e parece que não há saída possível.",
+    icon: ShieldOff,
+    title: "Vulnerabilidade Total",
+    description: "Sem reservas, qualquer imprevisto vira uma catástrofe financeira.",
   },
 ];
 
 const ConsequencesSection = () => {
   return (
-    <section id="consequencias" className="py-20 md:py-28 section-gradient">
-      <div className="container">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            O peso das dívidas
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            As consequências vão além do dinheiro
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Quando as dívidas se acumulam, elas afetam cada aspecto da nossa vida. 
-            Reconhecer isso é o primeiro passo para mudar.
-          </p>
-        </div>
+    <section className="relative overflow-hidden">
+      {/* Split Background */}
+      <div className="absolute inset-0 flex">
+        <div className="w-full lg:w-1/2 bg-secondary" />
+        <div className="hidden lg:block w-1/2 bg-primary" />
+      </div>
 
-        {/* Consequences Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {consequences.map((item, index) => (
-            <div 
-              key={index}
-              className="text-center p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/30 hover:border-destructive/30 transition-colors"
-            >
-              <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-destructive/10 flex items-center justify-center">
-                <item.icon className="w-7 h-7 text-destructive/80" />
-              </div>
-              
-              <h3 className="text-lg font-bold text-card-foreground mb-2">
-                {item.title}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Transition message */}
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-primary/10 px-6 py-4 rounded-xl">
-            <p className="text-lg font-medium text-primary">
-              Mas existe um caminho. E ele começa agora. ↓
+      <div className="container relative z-10 py-24 md:py-32">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* Left Side - Content */}
+          <div>
+            <span className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4">
+              O peso real
+            </span>
+            <h2 className="display-md text-foreground mb-8">
+              AS CONSEQUÊNCIAS
+              <br />
+              <span className="accent-underline">VÃO ALÉM</span>
+              <br />
+              DO BOLSO
+            </h2>
+            
+            <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-md">
+              O endividamento não é só um número vermelho na conta. 
+              Ele afeta sua saúde, seus relacionamentos, seus sonhos.
             </p>
+
+            {/* Quote */}
+            <blockquote className="border-l-4 border-accent pl-6 py-4">
+              <p className="text-xl font-light italic text-foreground/80">
+                "A pior parte não é dever dinheiro. É acordar todo dia 
+                com medo de atender o telefone."
+              </p>
+              <cite className="text-sm text-muted-foreground mt-2 block">
+                — Relato real de um brasileiro endividado
+              </cite>
+            </blockquote>
+          </div>
+
+          {/* Right Side - Cards */}
+          <div className="lg:text-primary-foreground">
+            <div className="grid gap-0">
+              {consequences.map((item, index) => (
+                <div 
+                  key={index}
+                  className="group flex items-start gap-4 p-6 border-b border-foreground/10 lg:border-primary-foreground/20 hover:bg-foreground/5 lg:hover:bg-primary-foreground/5 transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-none bg-accent flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-accent-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground lg:text-primary-foreground mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground lg:text-primary-foreground/70 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

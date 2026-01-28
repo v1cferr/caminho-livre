@@ -12,12 +12,13 @@ export default {
         sm: "640px",
         md: "768px",
         lg: "1024px",
-        xl: "1200px",
+        xl: "1280px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+        sans: ["'Inter'", "system-ui", "sans-serif"],
+        display: ["'Bebas Neue'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -45,6 +46,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        highlight: {
+          DEFAULT: "hsl(var(--highlight))",
+          foreground: "hsl(var(--highlight-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -71,11 +76,6 @@ export default {
         xl: "calc(var(--radius) + 4px)",
         "2xl": "calc(var(--radius) + 8px)",
       },
-      boxShadow: {
-        card: "var(--card-shadow)",
-        "card-hover": "var(--card-shadow-hover)",
-        glow: "var(--glow-accent)",
-      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -85,10 +85,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 20s linear infinite",
       },
     },
   },
