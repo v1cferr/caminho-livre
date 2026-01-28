@@ -1,4 +1,4 @@
-import { CreditCard, ShoppingBag, Brain, Megaphone } from "lucide-react";
+import { CreditCard, ShoppingBag, Brain, Megaphone, Dice1, Users, AlertTriangle } from "lucide-react";
 
 const problems = [
   {
@@ -9,21 +9,33 @@ const problems = [
   },
   {
     icon: ShoppingBag,
-    title: "Pressão para Consumir",
+    title: "Consumo Excessivo",
     description: "Promoções relâmpago, influenciadores vendendo estilo de vida, e a sensação de que precisamos ter mais para sermos felizes ou aceitos.",
     example: "\"Todo mundo tem, eu também mereço ter.\"",
   },
   {
     icon: Brain,
-    title: "Impacto na Saúde Mental",
-    description: "Ansiedade, noites sem dormir, vergonha de atender o telefone. O peso das dívidas afeta muito mais que o bolso — afeta quem somos.",
-    example: "\"A preocupação não me deixa dormir em paz.\"",
+    title: "Saúde Mental Fragilizada",
+    description: "Ansiedade, depressão, noites sem dormir. O estresse financeiro afeta a mente, e a mente fragilizada toma decisões impulsivas. É um ciclo difícil de quebrar.",
+    example: "\"Comprava para aliviar a tristeza, mas piorava tudo.\"",
   },
   {
     icon: Megaphone,
-    title: "Falta de Educação Financeira",
-    description: "Ninguém nos ensinou a lidar com dinheiro. Marketing agressivo de um lado, falta de informação do outro. O resultado? Decisões que custam caro.",
-    example: "\"Nunca aprendi a fazer um orçamento.\"",
+    title: "Marketing Agressivo",
+    description: "Propagandas que prometem facilidade, bancos que oferecem crédito sem parar. Marketing bem feito, educação financeira quase nenhuma.",
+    example: "\"Parecia tão fácil, era só assinar.\"",
+  },
+  {
+    icon: Dice1,
+    title: "Apostas e Vícios",
+    description: "A popularização das apostas online (bets) criou uma nova armadilha. O que começa como diversão pode virar um buraco sem fundo.",
+    example: "\"Ia ganhar de volta o que perdi, mas só afundei mais.\"",
+  },
+  {
+    icon: Users,
+    title: "Vulnerabilidade Social",
+    description: "Baixa renda, desemprego, falta de suporte familiar. Quem já está em situação difícil tem menos margem para erros financeiros.",
+    example: "\"Não tinha reserva, qualquer imprevisto quebrava tudo.\"",
   },
 ];
 
@@ -34,7 +46,7 @@ const ProblemSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            Entendendo o problema
+            As Raízes do Problema
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Por que tantas pessoas estão endividadas?
@@ -46,7 +58,7 @@ const ProblemSection = () => {
         </div>
 
         {/* Problem Cards */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {problems.map((problem, index) => (
             <div 
               key={index}
@@ -71,8 +83,25 @@ const ProblemSection = () => {
           ))}
         </div>
 
+        {/* Knowledge gap callout */}
+        <div className="mt-12 p-6 md:p-8 bg-secondary/50 rounded-2xl border border-border/50">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <AlertTriangle className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h4 className="font-bold text-foreground mb-1">A raiz de tudo: Falta de Conhecimento</h4>
+              <p className="text-muted-foreground">
+                Ninguém nos ensina a lidar com dinheiro na escola. Crescemos sem saber fazer orçamento, 
+                sem entender juros compostos, sem distinguir necessidade de desejo. 
+                <strong className="text-primary"> Mas nunca é tarde para aprender.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Empathy note */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <p className="text-muted-foreground italic">
             Se você se identificou com alguma dessas situações, saiba:{" "}
             <strong className="text-primary">você não está sozinho.</strong>

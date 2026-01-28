@@ -1,37 +1,59 @@
 import { Button } from "@/components/ui/button";
-import { FileCheck, RefreshCw, MessageCircle, Pyramid, Calculator, ArrowRight, CheckCircle } from "lucide-react";
+import { 
+  FileCheck, 
+  RefreshCw, 
+  MessageCircle, 
+  Pyramid, 
+  Calculator, 
+  ArrowRight, 
+  CheckCircle,
+  Lightbulb,
+  HeartHandshake
+} from "lucide-react";
 
 const solutions = [
   {
     icon: FileCheck,
-    title: "Negocie suas Dívidas",
-    description: "Programas como o Serasa Limpa Nome oferecem descontos de até 90% para quitação de dívidas. É um alívio real e imediato.",
+    title: "Serasa Limpa Nome",
+    description: "Programas de negociação oferecem descontos de até 90% para quitação de dívidas. É um alívio real e imediato.",
     benefits: ["Descontos significativos", "Parcelamento acessível", "Saia do vermelho rápido"],
     highlighted: true,
   },
   {
     icon: RefreshCw,
-    title: "Renegociação Direta",
+    title: "Renegociação de Dívidas",
     description: "Entre em contato direto com seus credores. Muitos preferem receber algo do que nada e estão abertos a negociar.",
-    benefits: ["Condições personalizadas", "Sem intermediários", "Flexibilidade"],
+    benefits: ["Condições personalizadas", "Sem intermediários", "Flexibilidade de prazos"],
   },
   {
     icon: MessageCircle,
-    title: "Assistência Virtual",
-    description: "Utilize chatbots e assistentes virtuais de bancos e instituições para tirar dúvidas e receber orientações.",
-    benefits: ["Disponível 24h", "Sem filas", "Respostas rápidas"],
+    title: "Assistente Virtual",
+    description: "Utilize chatbots e assistentes virtuais de bancos e instituições para tirar dúvidas e receber orientações 24h.",
+    benefits: ["Disponível 24 horas", "Sem filas ou espera", "Respostas imediatas"],
   },
   {
     icon: Pyramid,
-    title: "Priorize Necessidades",
-    description: "Aplique a Pirâmide de Maslow às suas finanças: primeiro o essencial (moradia, alimentação), depois o resto.",
-    benefits: ["Clareza de prioridades", "Menos estresse", "Decisões melhores"],
+    title: "Pirâmide de Maslow",
+    description: "Priorize suas necessidades: primeiro o essencial (moradia, alimentação, saúde), depois o restante. Ordem certa faz diferença.",
+    benefits: ["Clareza de prioridades", "Menos culpa", "Decisões conscientes"],
   },
   {
     icon: Calculator,
-    title: "Organize-se Financeiramente",
-    description: "Monte um orçamento simples, anote seus gastos e defina metas realistas. Pequenos passos levam longe.",
-    benefits: ["Controle real", "Metas alcançáveis", "Independência"],
+    title: "Organização Financeira",
+    description: "Monte um orçamento simples, anote todos os gastos e defina metas realistas. Pequenos passos levam longe.",
+    benefits: ["Controle total", "Metas alcançáveis", "Independência"],
+  },
+  {
+    icon: Lightbulb,
+    title: "Ideias de Renda Extra",
+    description: "Explore habilidades que você já tem para gerar renda adicional. Vender bolos, fazer freelance, dar aulas — toda renda ajuda.",
+    benefits: ["Use seus talentos", "Flexibilidade de horário", "Acelere a quitação"],
+  },
+  {
+    icon: HeartHandshake,
+    title: "Apoio Profissional",
+    description: "Busque ajuda de profissionais: CRAS, CAPS, assistência social. Saúde mental e suporte fazem parte da recuperação financeira.",
+    benefits: ["Suporte gratuito", "Orientação especializada", "Rede de apoio"],
   },
 ];
 
@@ -42,7 +64,7 @@ const SolutionsSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-            Caminhos para a solução
+            Caminhos para a Solução
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             A mudança está ao seu alcance
