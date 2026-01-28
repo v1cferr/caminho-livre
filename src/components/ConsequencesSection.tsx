@@ -1,10 +1,10 @@
-import { AlertCircle, Ban, TrendingDown, HeartCrack } from "lucide-react";
+import { AlertCircle, Ban, TrendingDown, HeartCrack, Users, ShieldX } from "lucide-react";
 
 const consequences = [
   {
     icon: Ban,
     title: "Nome Negativado",
-    description: "Restrição de crédito que impede novos financiamentos, cartões e até alugar um imóvel.",
+    description: "CPF restrito impede novos financiamentos, cartões, alugar imóvel e até conseguir emprego.",
   },
   {
     icon: TrendingDown,
@@ -13,13 +13,23 @@ const consequences = [
   },
   {
     icon: HeartCrack,
-    title: "Impacto Emocional",
-    description: "Estresse, ansiedade, brigas em família. As dívidas afetam relacionamentos e qualidade de vida.",
+    title: "Impacto na Saúde Mental",
+    description: "Ansiedade, depressão, vergonha. O peso das dívidas afeta profundamente o bem-estar emocional.",
+  },
+  {
+    icon: Users,
+    title: "Conflitos Familiares",
+    description: "Brigas sobre dinheiro, tensão constante em casa, relacionamentos desgastados pelo estresse.",
+  },
+  {
+    icon: ShieldX,
+    title: "Vulnerabilidade",
+    description: "Sem reserva, qualquer imprevisto vira crise. Doença, desemprego ou acidente podem devastar.",
   },
   {
     icon: AlertCircle,
     title: "Sensação de Impotência",
-    description: "A bola de neve só cresce, os juros consomem tudo, e parece que não há saída.",
+    description: "A bola de neve só cresce, os juros consomem tudo, e parece que não há saída possível.",
   },
 ];
 
@@ -42,14 +52,14 @@ const ConsequencesSection = () => {
         </div>
 
         {/* Consequences Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {consequences.map((item, index) => (
             <div 
               key={index}
-              className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/30"
+              className="text-center p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/30 hover:border-destructive/30 transition-colors"
             >
-              <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-destructive/10 flex items-center justify-center">
-                <item.icon className="w-8 h-8 text-destructive/80" />
+              <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-destructive/10 flex items-center justify-center">
+                <item.icon className="w-7 h-7 text-destructive/80" />
               </div>
               
               <h3 className="text-lg font-bold text-card-foreground mb-2">
