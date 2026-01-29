@@ -26,28 +26,33 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Giant Headline */}
-          <h1 className="animate-fade-up-delay-1 display-xl text-primary-foreground mb-8">
-            DÍVIDAS
-            <br />
-            <span className="text-accent">NÃO TE</span>
-            <br />
-            DEFINEM
-          </h1>
+          {/* Grid Layout for Headline and Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            {/* Giant Headline */}
+            <div className="lg:col-span-8">
+              <h1 className="animate-fade-up-delay-1 display-xl text-primary-foreground mb-8 text-left">
+                DÍVIDAS
+                <br />
+                <span className="text-accent">NÃO TE</span>
+                <br />
+                DEFINEM
+              </h1>
+            </div>
 
-          {/* Subtitle positioned asymmetrically */}
-          <div className="animate-fade-up-delay-2 md:ml-auto md:max-w-md lg:max-w-lg md:-mt-32 lg:-mt-48 relative z-10">
-            <p className="text-lg md:text-xl font-light leading-relaxed text-primary-foreground/80 mb-8">
-              Milhões de brasileiros enfrentam dificuldades financeiras. 
-              Estamos aqui para ajudar você a <strong className="text-accent font-medium">retomar o controle</strong>, 
-              sem julgamentos.
-            </p>
+            {/* Subtitle positioned next to headline on large screens */}
+            <div className="lg:col-span-4 animate-fade-up-delay-2 relative z-10 lg:pb-8">
+              <p className="text-lg md:text-xl font-light leading-relaxed text-primary-foreground/80 mb-8 max-w-md">
+                Milhões de brasileiros enfrentam dificuldades financeiras.
+                Estamos aqui para ajudar você a <strong className="text-accent font-medium">retomar o controle</strong>,
+                sem julgamentos.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="cta" size="xl" className="group">
-                Começar agora
-                <ArrowRight className="transition-transform group-hover:translate-x-1" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="cta" size="xl" className="group">
+                  Começar agora
+                  <ArrowRight className="transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
