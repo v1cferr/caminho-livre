@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { 
-  FileCheck, 
-  RefreshCw, 
-  MessageCircle, 
-  Pyramid, 
-  Calculator, 
+import {
+  FileCheck,
+  RefreshCw,
+  MessageCircle,
+  Pyramid,
+  Calculator,
   ArrowRight,
   Lightbulb,
   HeartHandshake
@@ -52,15 +52,20 @@ const solutions = [
 const SolutionsSection = () => {
   return (
     <section id="solucoes" className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Marquee Banner */}
-      <div className="bg-accent py-4 mb-20 overflow-hidden">
+      {/* Marquee Banner - Text Only Infinite Loop */}
+      <div className="w-full overflow-hidden mb-20 pointer-events-none select-none">
         <div className="marquee-container">
           <div className="marquee-text">
-            <span className="inline-flex items-center gap-8 text-accent-foreground font-['Bebas_Neue'] text-2xl tracking-wider">
+            <span className="inline-flex items-center gap-8 text-accent/40 font-['Bebas_Neue'] text-4xl tracking-wider">
               <span>★ A MUDANÇA É POSSÍVEL</span>
               <span>★ EXISTE SAÍDA</span>
               <span>★ VOCÊ CONSEGUE</span>
               <span>★ UM PASSO DE CADA VEZ</span>
+              <span>★ A MUDANÇA É POSSÍVEL</span>
+              <span>★ EXISTE SAÍDA</span>
+              <span>★ VOCÊ CONSEGUE</span>
+              <span>★ UM PASSO DE CADA VEZ</span>
+              {/* Duplicated for extra safety on wide screens */}
               <span>★ A MUDANÇA É POSSÍVEL</span>
               <span>★ EXISTE SAÍDA</span>
               <span>★ VOCÊ CONSEGUE</span>
@@ -86,39 +91,35 @@ const SolutionsSection = () => {
         {/* Solutions - Staggered Layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((solution, index) => (
-            <div 
+            <div
               key={index}
-              className={`editorial-card p-8 ${
-                solution.highlight 
-                  ? "md:col-span-2 lg:col-span-1 bg-accent text-accent-foreground border-accent" 
+              className={`editorial-card p-8 ${solution.highlight
+                  ? "md:col-span-2 lg:col-span-1 bg-accent text-accent-foreground border-accent"
                   : ""
-              } ${index === 0 ? "lg:row-span-2" : ""}`}
+                } ${index === 0 ? "lg:row-span-2" : ""}`}
             >
               {solution.highlight && (
                 <span className="inline-block text-xs font-bold tracking-widest uppercase mb-4 bg-accent-foreground/20 px-3 py-1">
                   MAIS POPULAR
                 </span>
               )}
-              
-              <div className={`w-14 h-14 flex items-center justify-center mb-6 ${
-                solution.highlight 
-                  ? "bg-accent-foreground text-accent" 
+
+              <div className={`w-14 h-14 flex items-center justify-center mb-6 ${solution.highlight
+                  ? "bg-accent-foreground text-accent"
                   : "bg-foreground text-background"
-              }`}>
+                }`}>
                 <solution.icon className="w-7 h-7" />
               </div>
-              
-              <h3 className={`text-2xl font-semibold mb-4 ${
-                solution.highlight ? "" : "text-foreground"
-              }`}>
+
+              <h3 className={`text-2xl font-semibold mb-4 ${solution.highlight ? "" : "text-foreground"
+                }`}>
                 {solution.title}
               </h3>
-              
-              <p className={`leading-relaxed ${
-                solution.highlight 
-                  ? "text-accent-foreground/90" 
+
+              <p className={`leading-relaxed ${solution.highlight
+                  ? "text-accent-foreground/90"
                   : "text-muted-foreground"
-              }`}>
+                }`}>
                 {solution.description}
               </p>
             </div>
