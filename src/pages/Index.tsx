@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import ConsequencesSection from "@/components/ConsequencesSection";
@@ -9,6 +10,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <main className="overflow-x-hidden">
+      <Header />
       <HeroSection />
       <ProblemSection />
       <ConsequencesSection />

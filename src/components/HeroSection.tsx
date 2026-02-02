@@ -4,17 +4,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="min-h-screen relative bg-primary text-primary-foreground overflow-hidden">
-      {/* Top Bar */}
-      <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-6 md:p-10">
-        <div className="text-sm font-medium tracking-widest uppercase">
-          Vida Financeira
-        </div>
-        <div className="hidden md:flex items-center gap-8 text-sm">
-          <a href="#problema" className="hover:text-accent transition-colors">O Problema</a>
-          <a href="#solucoes" className="hover:text-accent transition-colors">Soluções</a>
-          <a href="#beneficios" className="hover:text-accent transition-colors">Benefícios</a>
-        </div>
-      </div>
+
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-20 pt-24">

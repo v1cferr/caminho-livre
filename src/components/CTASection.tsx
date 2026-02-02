@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-background relative overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Big Statement */}
           <div>
-            <h2 className="display-lg text-foreground mb-8">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight font-['Bebas_Neue'] text-foreground mb-8">
               A MUDANÇA
               <br />
               COMEÇA
@@ -18,15 +18,15 @@ const CTASection = () => {
           </div>
 
           {/* Right - Content */}
-          <div className="bg-secondary p-8 md:p-12">
+          <div className="bg-secondary p-6 md:p-12">
             <p className="text-xl text-foreground leading-relaxed mb-6">
-              Você já deu o primeiro passo: buscar informação. 
+              Você já deu o primeiro passo: buscar informação.
               Agora é hora de agir.
             </p>
-            
+
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Não importa o tamanho da dívida — todo problema tem solução 
-              quando enfrentado com planejamento e paciência. A mudança 
+              Não importa o tamanho da dívida — todo problema tem solução
+              quando enfrentado com planejamento e paciência. A mudança
               que você quer está a um clique de distância.
             </p>
 
