@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             {/* Giant Headline */}
             <div className="lg:col-span-8">
-              <h1 className="animate-fade-up-delay-1 display-xl text-primary-foreground mb-8 text-left">
+              <h1 className="animate-fade-up-delay-1 text-5xl sm:text-7xl md:text-9xl lg:text-[12rem] leading-[0.85] tracking-tight font-['Bebas_Neue'] text-primary-foreground mb-8 text-left">
                 DÍVIDAS
                 <br />
                 <span className="text-accent">NÃO TE</span>
@@ -48,7 +48,7 @@ const HeroSection = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="cta" size="xl" className="group">
+                <Button variant="cta" size="xl" className="group w-full sm:w-auto">
                   Começar agora
                   <ArrowRight className="transition-transform group-hover:translate-x-1" />
                 </Button>
